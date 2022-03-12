@@ -97,3 +97,19 @@ main h2{
     height: 300px !important;
     width: 500px !important;
 }
+
+:root{
+    --primary:white;
+    --secondary: black;
+}
+
+body{
+    color:var(--secondary);
+    background: var(--primary);
+}
+
+.dark{
+    --primary:black;
+    --secondary: white;
+}
+
