@@ -3,3 +3,6 @@ window.onload = () => {
         document.documentElement.scrollTop = 0;
     })
 }
+function toggle(){
+    document.body.classList.toggle('dark');
+    }
