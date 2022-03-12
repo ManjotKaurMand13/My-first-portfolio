@@ -4,12 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "buildcss": "cleancss src/css/style.css -o dist/css/style.css",
+    "buildcss": "cleancss src/css/*.css -o dist/css/style.css",
     "buildjs": "mkdirp dist/js && uglifyjs src/js/*.js -o dist/js/main.js",
     "minifyimages": "imagemin src/images/* --out-dir=dist/images",
     "copy:html": "cp src/pages/*.html dist",
     "build": " npm run buildcss && npm run buildjs && npm run minifyimages && npm run copy:html"
-  
   },
   "author": "Manjot Kaur",
   "license": "ISC",
@@ -26,6 +25,7 @@
     "clean-css": "^5.2.4"
   },
   "devDependencies": {
+    "clean-css-cli": "^5.5.2",
     "imagemin-cli": "^7.0.0",
     "mkdirp": "^1.0.4",
     "uglify-js": "^3.15.3"
