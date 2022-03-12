@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "buildcss": "cleancss src/css/style.css -o dist/css/style.css",
+    "buildjs": "mkdirp dist/js && uglifyjs src/js/*.js -o dist/js/main.js",
+    "minifyimages": "imagemin src/images/* --out-dir=dist/images",
+    "copy:html": "cp src/pages/*.html dist",
+    "build": " npm run buildcss && npm run buildjs && npm run minifyimages && npm run copy:html"
+  
   },
   "author": "Manjot Kaur",
   "license": "ISC",
@@ -16,5 +21,13 @@
   "bugs": {
     "url": "https://github.com/ManjotKaurMand13/My-first-portfolio/issues"
   },
-  "homepage": "https://github.com/ManjotKaurMand13/My-first-portfolio#readme"
+  "homepage": "https://github.com/ManjotKaurMand13/My-first-portfolio#readme",
+  "dependencies": {
+    "clean-css": "^5.2.4"
+  },
+  "devDependencies": {
+    "imagemin-cli": "^7.0.0",
+    "mkdirp": "^1.0.4",
+    "uglify-js": "^3.15.3"
+  }
 }
